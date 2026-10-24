@@ -1,9 +1,9 @@
 # ═══════════════════════════════════════════════════════════════════════════
-#  🦄 ULTIMATE SKILLS for WINDOWS — ONE COMMAND. EVERY SKILL. EVERY AI. EVERY IDE.
+#  🦄 PRIME SKILLS for WINDOWS — ONE COMMAND. EVERY SKILL. EVERY AI. EVERY IDE.
 #  Usage:
-#    powershell -ExecutionPolicy Bypass -File ultimate-skills.ps1
-#    powershell -ExecutionPolicy Bypass -File ultimate-skills.ps1 -AllAgents
-#    powershell -ExecutionPolicy Bypass -File ultimate-skills.ps1 -Ponytail
+#    powershell -ExecutionPolicy Bypass -File prime-skills.ps1
+#    powershell -ExecutionPolicy Bypass -File prime-skills.ps1 -AllAgents
+#    powershell -ExecutionPolicy Bypass -File prime-skills.ps1 -Ponytail
 # ═══════════════════════════════════════════════════════════════════════════
 param(
   [switch]$AllAgents,
@@ -19,7 +19,7 @@ if (-not $Dest) { $Dest = Join-Path (Get-Location) "skills" }
 
 Write-Host ""
 Write-Host "   ==========================================================" -ForegroundColor Magenta
-Write-Host "    U L T I M A T E   S K I L L S   I N S T A L L E R  (Win)" -ForegroundColor Magenta
+Write-Host "    P R I M E   S K I L L S   I N S T A L L E R  (Win)" -ForegroundColor Magenta
 Write-Host "    one command - every skill - every AI - every IDE" -ForegroundColor Magenta
 Write-Host "   ==========================================================" -ForegroundColor Magenta
 if ($Ponytail) {
@@ -27,7 +27,7 @@ Write-Host @"
 
         \_\
       (( \ \,   PONYTAIL MODE ENGAGED
-       \\ \.\\  installing ultimate skills...
+       \\ \.\\  installing PRIME skills...
         ``  (\)
          `-->
 "@ -ForegroundColor Yellow
@@ -35,7 +35,7 @@ Write-Host @"
 
 if (-not (Test-Path $Bundle)) {
   Write-Host " [!] bundle/ not found next to script - offline install unavailable" -ForegroundColor Red
-  Write-Host "     re-download the full ultimate-skills folder (with bundle)" -ForegroundColor Red
+  Write-Host "     re-download the full prime-skills folder (with bundle)" -ForegroundColor Red
   exit 1
 }
 
@@ -90,6 +90,6 @@ if ($AllAgents) {
 $count = (Get-ChildItem -Path $Dest -Directory | Where-Object { Test-Path (Join-Path $_.FullName "SKILL.md") }).Count
 Write-Host ""
 Write-Host " ========================================================" -ForegroundColor Magenta
-Write-Host "  ULTIMATE SKILLS: $count skills installed -> $Dest" -ForegroundColor Magenta
+Write-Host "  PRIME SKILLS: $count skills installed -> $Dest" -ForegroundColor Magenta
 Write-Host "  ponytail secured. go build something." -ForegroundColor Yellow
 Write-Host " ========================================================" -ForegroundColor Magenta

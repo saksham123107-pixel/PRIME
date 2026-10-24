@@ -1,10 +1,10 @@
 @echo off
 rem ============================================================
-rem  ULTIMATE SKILLS - Windows one-click launcher
+rem  PRIME SKILLS - Windows one-click launcher
 rem  Double-click me, or run from CMD:
-rem     ultimate-skills.bat
-rem     ultimate-skills.bat --all-agents
-rem     ultimate-skills.bat --all-agents --ponytail
+rem     prime-skills.bat
+rem     prime-skills.bat --all-agents
+rem     prime-skills.bat --all-agents --ponytail
 rem ============================================================
 setlocal
 set "HERE=%~dp0"
@@ -17,7 +17,7 @@ if %errorlevel%==0 (
 
 where powershell >nul 2>nul
 if %errorlevel%==0 (
-  powershell -NoProfile -ExecutionPolicy Bypass -File "%HERE%ultimate-skills.ps1" %*
+  powershell -NoProfile -ExecutionPolicy Bypass -File "%HERE%prime-skills.ps1" %*
   goto :done
 )
 

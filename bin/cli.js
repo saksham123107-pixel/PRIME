@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-/* ═══════════════════════════════════════════════════════════════════════
-   🦄 ULTIMATE SKILLS — one command, 99 skills, every AI, every IDE.
+/* ═════════════════════════════════════════════════════════════════════
+   🦄 PRIME SKILLS — one command, 99 skills, every AI, every IDE.
    Cross-platform (Windows/macOS/Linux). Zero dependencies. Works offline.
    Usage:
-     npx ultimate-skills                 → ./skills
-     npx ultimate-skills --all-agents    → also every AI/IDE skills dir
-     npx ultimate-skills --ponytail      → 🐴
-     npx ultimate-skills --dest=PATH
-   ═══════════════════════════════════════════════════════════════════════ */
+     npx prime-skills                 → ./skills
+     npx prime-skills --all-agents    → also every AI/IDE skills dir
+     npx prime-skills --ponytail      → 🐴
+     npx prime-skills --dest=PATH
+   ═════════════════════════════════════════════════════════════════════ */
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -28,21 +28,21 @@ const C = { g: s => `\x1b[32m${s}\x1b[0m`, m: s => `\x1b[35m${s}\x1b[0m`, y: s =
 
 console.log("");
 console.log(C.m("   =========================================================="));
-console.log(C.m("    U L T I M A T E   S K I L L S   I N S T A L L E R"));
+console.log(C.m("    P R I M E   S K I L L S   I N S T A L L E R"));
 console.log(C.m("    one command - every skill - every AI - every IDE"));
 console.log(C.m("   =========================================================="));
 if (pony) {
   console.log(C.y(`
         \\_\\
       (( \\ \\,   PONYTAIL MODE ENGAGED
-       \\\\ \\.\\\\  installing ultimate skills...
+       \\\\ \\.\\\\  installing PRIME skills...
         \`\`  (\\)
          \`-->
 `));
 }
 
 if (!fs.existsSync(BUNDLE)) {
-  console.error(C.r(" [!] bundle/ not found in package — reinstall: npm i -g ultimate-skills"));
+  console.error(C.r(" [!] bundle/ not found in package — reinstall: npm i -g prime-skills"));
   process.exit(1);
 }
 
@@ -107,6 +107,6 @@ const count = fs.readdirSync(DEST, { withFileTypes: true })
   .filter(d => d.isDirectory() && fs.existsSync(path.join(DEST, d.name, "SKILL.md"))).length;
 console.log("");
 console.log(C.m(" ========================================================"));
-console.log(C.m(`  🦄 ULTIMATE SKILLS: ${count} skills installed -> ${DEST}`));
+console.log(C.m(`  🦄 PRIME SKILLS: ${count} skills installed -> ${DEST}`));
 console.log(C.y("  🐴 ponytail secured. go build something."));
 console.log(C.m(" ========================================================"));

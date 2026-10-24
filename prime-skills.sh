@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 # ═══════════════════════════════════════════════════════════════════════════
-#  🦄 ULTIMATE SKILLS — ONE COMMAND. EVERY SKILL. EVERY AI. EVERY IDE.
+#  🦄 PRIME SKILLS — ONE COMMAND. EVERY SKILL. EVERY AI. EVERY IDE.
 #  Reverse Engineering | Security | Project Review | Testing | Web | Clone
 #  Android/Rust/C++/C#/Python/JS | and the 🐴 PONYTAIL to tie it together.
 #
 #  Usage:
-#    bash ultimate-skills.sh                 # install everything (local ./skills)
-#    bash ultimate-skills.sh --ponytail      # verbose + rainbow flair 🐴
-#    bash ultimate-skills.sh --all-agents    # also copy into every AI/IDE dir
-#    ULTIMATE_SKILLS_DIR=/path bash ultimate-skills.sh
+#    bash prime-skills.sh                 # install everything (local ./skills)
+#    bash prime-skills.sh --ponytail      # verbose + rainbow flair 🐴
+#    bash prime-skills.sh --all-agents    # also copy into every AI/IDE dir
+#    PRIME_SKILLS_DIR=/path bash prime-skills.sh
 # ═══════════════════════════════════════════════════════════════════════════
 set -u
 PONYTAIL=0; ALL_AGENTS=0
 for a in "$@"; do case "$a" in --ponytail) PONYTAIL=1;; --all-agents) ALL_AGENTS=1;; esac; done
-DEST="${ULTIMATE_SKILLS_DIR:-$PWD/skills}"; mkdir -p "$DEST"
+DEST="${PRIME_SKILLS_DIR:-$PWD/skills}"; mkdir -p "$DEST"
 
 # --- 🐴 ponytail mascot -----------------------------------------------------
 pony() { [ "$PONYTAIL" -eq 1 ] || return 0; cat <<'EOF'
         \_\
       (( \ \,   🐴 PONYTAIL MODE ENGAGED
-       \\ \.\\  installing ultimate skills...
+       \\ \.\\  installing PRIME skills...
         \`\  (\)
          `-->
 EOF
@@ -36,7 +36,7 @@ BUNDLE="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd)/bundle"
 
 cat <<'BAN'
    ┌──────────────────────────────────────────────────────────┐
-   │  🦄 U L T I M A T E   S K I L L S   I N S T A L L E R 🐴  │
+   │  🦄 P R I M E   S K I L L S   I N S T A L L E R 🐴  │
    │  one command · every skill · every AI · every IDE         │
    └──────────────────────────────────────────────────────────┘
 BAN
@@ -189,7 +189,7 @@ fi
 echo
 echo "════════════════════════════════════════"
 [ -n "$BUNDLE" ] && echo "🐴 offline bundle detected — zero network needed"
-echo "🦄 ULTIMATE SKILLS: $OK/${#MANIFEST[@]} installed → $DEST"
+echo "🦄 PRIME SKILLS: $OK/${#MANIFEST[@]} installed → $DEST"
 [ "${#FAIL[@]}" -gt 0 ] && echo "   ⚠️  retry later: ${FAIL[*]}"
 echo "🐴 ponytail secured. go build something."
 echo "════════════════════════════════════════"
