@@ -1,0 +1,10 @@
+{
+  "name": "ultimate-skills",
+  "version": "1.0.0",
+  "description": "🦄 ONE command installs 99 skills (ECC suite, reverse engineering, CTF, security audit, project review, testing, web dev) into every AI CLI & IDE: Claude Code, Codex, Gemini CLI, Cursor, Windsurf, Qoder, OpenCode, Goose. Offline-first bundle, zero dependencies. 🐴 ponytail included.",
+  "bin": { "ultimate-skills": "bin/cli.js" },
+  "files": ["bin/", "bundle/", "SKILL.md", "ultimate-skills.sh", "ultimate-skills.ps1", "ultimate-skills.bat"],
+  "keywords": ["skills", "claude", "cursor", "qoder", "codex", "gemini", "agent", "reverse-engineering", "security", "testing", "ecc"],
+  "license": "MIT",
+  "engines": { "node": ">=16.7.0" }
+}
