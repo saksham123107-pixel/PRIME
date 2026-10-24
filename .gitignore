@@ -1,3 +1,11 @@
 node_modules/
 *.log
 .DS_Store
+.claude/
+.cursor/
+.qoder/
+.gemini/
+.windsurf/
+.opencode/
+.goose/
+.codex/

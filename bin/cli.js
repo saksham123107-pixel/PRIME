@@ -71,12 +71,16 @@ const CWD = process.cwd();
 const AGENTS = [
   ["Claude Code", path.join(HOME, ".claude", "skills")],
   ["Codex CLI", path.join(HOME, ".codex", "skills")],
+  ["Universal (.agents)", path.join(HOME, ".agents", "skills")],
   ["Gemini CLI", path.join(HOME, ".gemini", "skills")],
   ["Cursor", path.join(HOME, ".cursor", "skills")],
   ["Windsurf", path.join(HOME, ".windsurf", "skills")],
   ["Qoder", path.join(HOME, ".qoder", "skills")],
   ["Qoder(project)", path.join(CWD, ".qoder", "skills")],
-  ["OpenCode", path.join(HOME, ".opencode", "skills")],
+  ["OpenCode", path.join(HOME, ".config", "opencode", "skill")],
+  ["OpenCode(alt)", path.join(HOME, ".opencode", "skills")],
+  ["Factory Droid", path.join(HOME, ".factory", "skills")],
+  ["GitHub Copilot", path.join(HOME, ".copilot", "skills")],
   ["Goose", path.join(HOME, ".goose", "skills")],
   ["Claude(project)", path.join(CWD, ".claude", "skills")],
   ["Cursor(project)", path.join(CWD, ".cursor", "skills")],
@@ -90,7 +94,7 @@ if (allAgents) {
     console.log(C.g(`   OK ${name.padEnd(16)} -> ${dir}`));
   }
 } else {
-  console.log(C.c("\n [i] add --all-agents to mirror into Claude/Codex/Gemini/Cursor/Windsurf/Qoder/OpenCode/Goose"));
+  console.log(C.c("\n [i] add --all-agents to mirror into Claude/Codex/.agents/Gemini/Cursor/Windsurf/Qoder/OpenCode/Factory/Copilot/Goose"));
 }
 
 // --- 3. ECC full harness (optional, best-effort) -----------------------------

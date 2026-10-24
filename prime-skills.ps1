@@ -62,12 +62,16 @@ foreach ($s in $items) {
 $agents = [ordered]@{
   "Claude Code"    = "$env:USERPROFILE\.claude\skills"
   "Codex CLI"      = "$env:USERPROFILE\.codex\skills"
+  "Universal"      = "$env:USERPROFILE\.agents\skills"
   "Gemini CLI"     = "$env:USERPROFILE\.gemini\skills"
   "Cursor"         = "$env:USERPROFILE\.cursor\skills"
   "Windsurf"       = "$env:USERPROFILE\.windsurf\skills"
   "Qoder"          = "$env:USERPROFILE\.qoder\skills"
   "Qoder(project)" = (Join-Path (Get-Location) ".qoder\skills")
-  "OpenCode"       = "$env:USERPROFILE\.opencode\skills"
+  "OpenCode"       = "$env:USERPROFILE\.config\opencode\skill"
+  "OpenCode(alt)"  = "$env:USERPROFILE\.opencode\skills"
+  "Factory Droid"  = "$env:USERPROFILE\.factory\skills"
+  "GitHub Copilot" = "$env:USERPROFILE\.copilot\skills"
   "Goose"          = "$env:USERPROFILE\.goose\skills"
   "Claude(project)"= (Join-Path (Get-Location) ".claude\skills")
   "Cursor(project)"= (Join-Path (Get-Location) ".cursor\skills")

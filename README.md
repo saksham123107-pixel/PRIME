@@ -20,7 +20,7 @@
 
 ## Why PRIME SKILLS?
 
-AI coding assistants are only as good as the knowledge they carry. PRIME SKILLS turns **any** AI harness — Claude Code, Codex CLI, Gemini CLI, Cursor, Windsurf, **Qoder**, OpenCode, Goose — into a full-stack engineering powerhouse by installing **99 curated, production-grade skills** in one shot:
+AI coding assistants are only as good as the knowledge they carry. PRIME SKILLS turns **any** AI harness — Claude Code, Codex CLI, Gemini CLI, Cursor, Windsurf, **Qoder**, OpenCode, Factory Droid, GitHub Copilot, Goose — into a full-stack engineering powerhouse by installing **99 curated, production-grade skills** in one shot:
 
 -  **Reverse engineering** — APKs (JADX/Apktool), native binaries (Ghidra/DWARF), protocols, Rust, C++, C#, Python, JS, .NET, WASM, Go
 -  **Security** — OWASP audits, red-team adversarial testing, CodeQL static analysis, secret scanning
@@ -102,11 +102,17 @@ prime-skills --all-agents
 |---|---|
 | Claude Code | `~/.claude/skills` |
 | Codex CLI | `~/.codex/skills` |
+| Universal shared | `~/.agents/skills` |
+| Codex CLI | `~/.codex/skills` |
 | Gemini CLI | `~/.gemini/skills` |
 | Cursor | `~/.cursor/skills` |
 | Windsurf | `~/.windsurf/skills` |
 | **Qoder** | `~/.qoder/skills` |
-| OpenCode | `~/.opencode/skills` |
+| OpenCode | `~/.config/opencode/skill` |
+| OpenCode (alt) | `~/.opencode/skills` |
+| Factory Droid | `~/.factory/skills` |
+| GitHub Copilot | `~/.copilot/skills` |
+| Universal shared | `~/.agents/skills` |
 | Goose | `~/.goose/skills` |
 | Project-local | `./.claude/skills`, `./.cursor/skills`, `./.qoder/skills` |
 

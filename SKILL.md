@@ -58,7 +58,7 @@ Covers: **Rust · C++ · C# · Python · JS/TS · Android APK · .NET · WASM ·
 
 ## Targets with --all-agents
 
-`~/.claude/skills` (Claude Code) · `~/.codex/skills` (Codex) · `~/.gemini/skills` (Gemini CLI) · `~/.cursor/skills` (Cursor) · `~/.windsurf/skills` (Windsurf) · `~/.qoder/skills` (Qoder) · `~/.opencode/skills` (OpenCode) · `~/.goose/skills` (Goose) · project-local `.qoder/skills` + `.claude/skills` + `.cursor/skills`.
+`~/.claude/skills` (Claude Code) · `~/.codex/skills` (Codex) · `~/.agents/skills` (universal shared) · `~/.gemini/skills` (Gemini CLI) · `~/.cursor/skills` (Cursor) · `~/.windsurf/skills` (Windsurf) · `~/.qoder/skills` (Qoder) · `~/.config/opencode/skill` (OpenCode) · `~/.factory/skills` (Factory Droid) · `~/.copilot/skills` (GitHub Copilot) · `~/.goose/skills` (Goose) · project-local `.qoder/skills` + `.claude/skills` + `.cursor/skills`.
 
 ## Install strategy (resilient, in order)
 
