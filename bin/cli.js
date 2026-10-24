@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /* ═════════════════════════════════════════════════════════════════════
-   🦄 PRIME SKILLS — one command, 99 skills, every AI, every IDE.
+   PRIME SKILLS — one command, 99 skills, every AI, every IDE.
    Cross-platform (Windows/macOS/Linux). Zero dependencies. Works offline.
    Usage:
-     npx prime-skills                 → ./skills
-     npx prime-skills --all-agents    → also every AI/IDE skills dir
-     npx prime-skills --ponytail      → 🐴
+     npx prime-skills                 -> ./skills
+     npx prime-skills --all-agents    -> also every AI/IDE skills dir
+     npx prime-skills --ponytail      ->
      npx prime-skills --dest=PATH
    ═════════════════════════════════════════════════════════════════════ */
 "use strict";
@@ -83,7 +83,7 @@ const AGENTS = [
 ];
 if (allAgents) {
   console.log("");
-  console.log(C.y(" 🐴 distributing to every AI + IDE..."));
+  console.log(C.y(" distributing to every AI + IDE..."));
   for (const [name, dir] of AGENTS) {
     fs.mkdirSync(dir, { recursive: true });
     fs.cpSync(DEST, dir, { recursive: true });
@@ -96,7 +96,7 @@ if (allAgents) {
 // --- 3. ECC full harness (optional, best-effort) -----------------------------
 if (!skipEcc) {
   console.log("");
-  console.log(C.y(" 🐴 ECC full harness (agents+commands+hooks) — best effort..."));
+  console.log(C.y(" ECC full harness (agents+commands+hooks) — best effort..."));
   const r = spawnSync("npx", ["-y", "ecc-universal@2.2.3", "setup"], { stdio: "ignore", timeout: 150000, shell: process.platform === "win32" });
   if (r.status === 0) console.log(C.g("   OK ECC harness installed via ecc-universal"));
   else console.log(C.c("   [i] ECC skills bundled OK; full harness later: npx ecc-universal@2.2.3 setup"));
@@ -107,6 +107,6 @@ const count = fs.readdirSync(DEST, { withFileTypes: true })
   .filter(d => d.isDirectory() && fs.existsSync(path.join(DEST, d.name, "SKILL.md"))).length;
 console.log("");
 console.log(C.m(" ========================================================"));
-console.log(C.m(`  🦄 PRIME SKILLS: ${count} skills installed -> ${DEST}`));
-console.log(C.y("  🐴 ponytail secured. go build something."));
+console.log(C.m(`  PRIME SKILLS: ${count} skills installed -> ${DEST}`));
+console.log(C.y("  ponytail secured. go build something."));
 console.log(C.m(" ========================================================"));

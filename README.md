@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🦄 PRIME SKILLS
+# PRIME SKILLS
 
 ### One command. 99 elite skills. Every AI. Every IDE. Zero dependencies.
 
@@ -22,18 +22,18 @@
 
 AI coding assistants are only as good as the knowledge they carry. PRIME SKILLS turns **any** AI harness — Claude Code, Codex CLI, Gemini CLI, Cursor, Windsurf, **Qoder**, OpenCode, Goose — into a full-stack engineering powerhouse by installing **99 curated, production-grade skills** in one shot:
 
-- 🔬 **Reverse engineering** — APKs (JADX/Apktool), native binaries (Ghidra/DWARF), protocols, Rust, C++, C#, Python, JS, .NET, WASM, Go
-- 🔐 **Security** — OWASP audits, red-team adversarial testing, CodeQL static analysis, secret scanning
-- 👀 **Project review** — the highest-rated code-review skills on skills.sh (Matt Pocock 778k installs, Sentry, Anthropic, CodeRabbit)
-- 🧪 **Testing** — E2E patterns, testing strategy, constant-time testing, React Native & Angular suites
-- ⚡ **ECC suite** — the full 46-skill agent-harness system from [affaan-m/ECC](https://github.com/affaan-m/ECC)
-- 🌐 **Web & design** — web development, website cloning, design-system extraction
+-  **Reverse engineering** — APKs (JADX/Apktool), native binaries (Ghidra/DWARF), protocols, Rust, C++, C#, Python, JS, .NET, WASM, Go
+-  **Security** — OWASP audits, red-team adversarial testing, CodeQL static analysis, secret scanning
+-  **Project review** — the highest-rated code-review skills on skills.sh (Matt Pocock 778k installs, Sentry, Anthropic, CodeRabbit)
+-  **Testing** — E2E patterns, testing strategy, constant-time testing, React Native & Angular suites
+-  **ECC suite** — the full 46-skill agent-harness system from [affaan-m/ECC](https://github.com/affaan-m/ECC)
+-  **Web & design** — web development, website cloning, design-system extraction
 
 **Offline-first**: every skill ships inside this repo. No network? No problem — installation is a local file copy that finishes in under a second.
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### npx (recommended — no install)
 ```bash
@@ -66,7 +66,7 @@ prime-skills --all-agents
 | Flag | Effect |
 |---|---|
 | `--all-agents` / `-a` | Mirror skills into every detected AI/IDE skills dir |
-| `--ponytail` | 🐴 verbose rainbow mode |
+| `--ponytail` | verbose rainbow mode |
 | `--skip-ecc` | Skip the optional ECC full-harness step |
 | `--dest=PATH` | Custom install directory (default `./skills`) |
 
@@ -74,17 +74,17 @@ prime-skills --all-agents
 
 ---
 
-## 📦 What's Inside — 99 Skills
+##  What's Inside — 99 Skills
 
 | Category | Count | Skills |
 |---|---:|---|
-| ⚡ [ECC Suite](https://github.com/affaan-m/ECC) | 46 | api-design, backend-patterns, tdd-workflow, frontend-patterns, deep-research, security-review, mcp-server-patterns, eval-harness, unified-memory, strategic-compact … |
-| 🔬 Reverse Engineering | 7 | reverse-engineer-anything (REA), reverse-engineering-agent, reverse-engineering, protocol-reverse-engineering, binary-analysis-patterns, dwarf-expert, apk-teardown-research |
-| 🚩 CTF | 10 | ctf-reverse, ctf-crypto, ctf-forensics, ctf-malware, ctf-osint, ctf-pwn, ctf-web, ctf-writeup, solve-challenge, ctf-web-reverse-audit |
-| 🔐 Security | 6 | security-scanner, code-security-audit, security-audit-owasp, red-team-adversarial-testing, li-python-sec-check, codeql |
-| 👀 Project Review | 8 | smart-code-review, code-review, code-review-matt ⭐778k, code-review-sentry, code-review-anthropics, code-review-coderabbit, codebase-design, diagnosing-bugs |
-| 🧪 Testing | 8 | e2e-testing-patterns, testing-patterns, afrexai-qa-testing-engine, testing-strategy (Anthropic), constant-time-testing, testing-handbook-generator, react-native-testing, angular-testing |
-| 🌐 Web & Design | 13 | web-development, clone-website, python-executor, extract-design-system ⭐130k, angular suite ×10, autofix |
+|  [ECC Suite](https://github.com/affaan-m/ECC) | 46 | api-design, backend-patterns, tdd-workflow, frontend-patterns, deep-research, security-review, mcp-server-patterns, eval-harness, unified-memory, strategic-compact … |
+|  Reverse Engineering | 7 | reverse-engineer-anything (REA), reverse-engineering-agent, reverse-engineering, protocol-reverse-engineering, binary-analysis-patterns, dwarf-expert, apk-teardown-research |
+|  CTF | 10 | ctf-reverse, ctf-crypto, ctf-forensics, ctf-malware, ctf-osint, ctf-pwn, ctf-web, ctf-writeup, solve-challenge, ctf-web-reverse-audit |
+|  Security | 6 | security-scanner, code-security-audit, security-audit-owasp, red-team-adversarial-testing, li-python-sec-check, codeql |
+|  Project Review | 8 | smart-code-review, code-review, code-review-matt 778k, code-review-sentry, code-review-anthropics, code-review-coderabbit, codebase-design, diagnosing-bugs |
+|  Testing | 8 | e2e-testing-patterns, testing-patterns, afrexai-qa-testing-engine, testing-strategy (Anthropic), constant-time-testing, testing-handbook-generator, react-native-testing, angular-testing |
+|  Web & Design | 13 | web-development, clone-website, python-executor, extract-design-system 130k, angular suite ×10, autofix |
 | **Total** | **99** | |
 
 <details>
@@ -96,7 +96,7 @@ prime-skills --all-agents
 
 ---
 
-## 🎯 Where Skills Get Installed
+##  Where Skills Get Installed
 
 | Target | Path (`--all-agents`) |
 |---|---|
@@ -114,7 +114,7 @@ Without `--all-agents`, skills install to `./skills` in your current project onl
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 Every skill is a folder containing a `SKILL.md` — a name, a description, and expert instructions. Modern AI harnesses scan their skills directories and **auto-load the relevant skill** when your task matches (ask your agent to "audit this code" and the security-audit skill activates).
 
@@ -123,11 +123,11 @@ PRIME SKILLS simply puts the right folders in the right places. It:
 1. **Copies the bundled skills** (offline, instant) — no network required
 2. **Mirrors them** into every detected AI/IDE directory with `--all-agents`
 3. Optionally boots the **ECC full harness** (`npx ecc-universal@2.2.3 setup`) for agents + commands + hooks + memory
-4. Falls back gracefully: bundle → `clawhub` → GitHub tarball → `npx skills add`
+4. Falls back gracefully: bundle -> `clawhub` -> GitHub tarball -> `npx skills add`
 
 ---
 
-## ❓ FAQ
+##  FAQ
 
 <details>
 <summary><b>Is this safe?</b></summary>
@@ -155,15 +155,15 @@ Delete the skill folders: `rm -rf ~/.claude/skills/* ~/.cursor/skills/*` (or the
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 PRs welcome! To add a skill: create a folder with a `SKILL.md` (frontmatter: `name` + `description`), add it to `bundle/`, and register it in the manifest arrays in `bin/cli.js` / `prime-skills.sh`.
 
-## ⚖️ Ethics & Legal
+##  Ethics & Legal
 
 Analyze only software you own or are authorized to examine. No DRM, license-check, or anti-cheat bypass. CTF skills are for sanctioned challenges only.
 
-## 📄 License
+##  License
 
 MIT — skill contents retain their upstream licenses (ECC: MIT · Trail of Bits: MIT · others per source repos).
 
@@ -171,8 +171,8 @@ MIT — skill contents retain their upstream licenses (ECC: MIT · Trail of Bits
 
 <div align="center">
 
-**🐴 ponytail secured — go build something.**
+**ponytail secured — go build something.**
 
-⭐ Star this repo if it saved you hours of setup!
+ Star this repo if it saved you hours of setup!
 
 </div>

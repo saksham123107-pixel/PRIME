@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # ═══════════════════════════════════════════════════════════════════════════
-#  🦄 PRIME SKILLS — ONE COMMAND. EVERY SKILL. EVERY AI. EVERY IDE.
+#  PRIME SKILLS — ONE COMMAND. EVERY SKILL. EVERY AI. EVERY IDE.
 #  Reverse Engineering | Security | Project Review | Testing | Web | Clone
-#  Android/Rust/C++/C#/Python/JS | and the 🐴 PONYTAIL to tie it together.
+#  Android/Rust/C++/C#/Python/JS | and the PONYTAIL to tie it together.
 #
 #  Usage:
 #    bash prime-skills.sh                 # install everything (local ./skills)
-#    bash prime-skills.sh --ponytail      # verbose + rainbow flair 🐴
+#    bash prime-skills.sh --ponytail      # verbose + rainbow flair
 #    bash prime-skills.sh --all-agents    # also copy into every AI/IDE dir
 #    PRIME_SKILLS_DIR=/path bash prime-skills.sh
 # ═══════════════════════════════════════════════════════════════════════════
@@ -15,10 +15,10 @@ PONYTAIL=0; ALL_AGENTS=0
 for a in "$@"; do case "$a" in --ponytail) PONYTAIL=1;; --all-agents) ALL_AGENTS=1;; esac; done
 DEST="${PRIME_SKILLS_DIR:-$PWD/skills}"; mkdir -p "$DEST"
 
-# --- 🐴 ponytail mascot -----------------------------------------------------
+# --- ponytail mascot -----------------------------------------------------
 pony() { [ "$PONYTAIL" -eq 1 ] || return 0; cat <<'EOF'
         \_\
-      (( \ \,   🐴 PONYTAIL MODE ENGAGED
+      (( \ \,   PONYTAIL MODE ENGAGED
        \\ \.\\  installing PRIME skills...
         \`\  (\)
          `-->
@@ -36,7 +36,7 @@ BUNDLE="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd)/bundle"
 
 cat <<'BAN'
    ┌──────────────────────────────────────────────────────────┐
-   │  🦄 P R I M E   S K I L L S   I N S T A L L E R 🐴  │
+   │  P R I M E   S K I L L S   I N S T A L L E R  │
    │  one command · every skill · every AI · every IDE         │
    └──────────────────────────────────────────────────────────┘
 BAN
@@ -101,7 +101,7 @@ MANIFEST=(
   # ---- ECC (github.com/affaan-m/ECC) — 46 skills in one shot ----
   "ecc-suite|https://codeload.github.com/affaan-m/ECC/tar.gz/refs/heads/main|ECC-main/.agents/skills"
 )
-rainbow "🐴 manifest: ${#MANIFEST[@]} skills loaded"
+rainbow "manifest: ${#MANIFEST[@]} skills loaded"
 
 have() { command -v "$1" >/dev/null 2>&1; }
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
@@ -124,42 +124,42 @@ for row in "${MANIFEST[@]}"; do
   printf "[%02d/%02d] %-42s" "$i" "${#MANIFEST[@]}" "$name"
   if [ -n "$BUNDLE" ] && [ -d "$BUNDLE/$name" ]; then
     if [ -f "$BUNDLE/$name/SKILL.md" ]; then
-      cp -r "$BUNDLE/$name" "$DEST/" && echo "✅ bundle(offline)"; OK=$((OK+1)); continue
+      cp -r "$BUNDLE/$name" "$DEST/" && echo " bundle(offline)"; OK=$((OK+1)); continue
     elif ls "$BUNDLE/$name"/*/SKILL.md >/dev/null 2>&1; then # suite dir (e.g. ecc-suite)
-      mkdir -p "$DEST"; cp -r "$BUNDLE/$name"/. "$DEST/" && echo "✅ bundle(offline suite)"; OK=$((OK+1)); continue
+      mkdir -p "$DEST"; cp -r "$BUNDLE/$name"/. "$DEST/" && echo " bundle(offline suite)"; OK=$((OK+1)); continue
     fi
   fi
   if [ -z "$gh" ]; then # pure clawhub entries: retry with backoff
     for attempt in 1 2 3; do
       if have clawhub && clawhub install "$name" >/dev/null 2>&1 && [ -e "$DEST/$name/SKILL.md" ]; then
-        echo "✅ clawhub"; OK=$((OK+1)); break
+        echo " clawhub"; OK=$((OK+1)); break
       fi
       [ "$attempt" -lt 3 ] && sleep 20
     done
     [ -e "$DEST/$name/SKILL.md" ] && continue
   else # github-backed entries: single clawhub shot, then fast fallback
     if have clawhub && clawhub install "$name" >/dev/null 2>&1 && [ -e "$DEST/$name/SKILL.md" ]; then
-      echo "✅ clawhub"; OK=$((OK+1)); continue
+      echo " clawhub"; OK=$((OK+1)); continue
     fi
   fi
-  if [ -n "$gh" ] && install_gh "$gh" "$sub" "$([ "$name" = ecc-suite ] && echo flatten)"; then echo "✅ github"; OK=$((OK+1)); continue
-  elif [ -n "$gh" ] && [ "$name" != ecc-suite ] && install_gh "$gh" "$(basename "$sub")"; then echo "✅ github"; OK=$((OK+1)); continue; fi
+  if [ -n "$gh" ] && install_gh "$gh" "$sub" "$([ "$name" = ecc-suite ] && echo flatten)"; then echo " github"; OK=$((OK+1)); continue
+  elif [ -n "$gh" ] && [ "$name" != ecc-suite ] && install_gh "$gh" "$(basename "$sub")"; then echo " github"; OK=$((OK+1)); continue; fi
   # last resort: npx skills (slow but universal)
   if have npx; then
     owner="${gh#*github.com/}"; owner="${owner%/tar.gz*}"; owner="${owner%/archive*}"
     if [ -n "$owner" ] && timeout 90 npx -y skills add "https://github.com/$owner" --skill "$(basename "${sub:-$name}")" >/dev/null 2>&1; then
-      echo "✅ npx"; OK=$((OK+1)); continue
+      echo " npx"; OK=$((OK+1)); continue
     fi
   fi
-  echo "❌ skipped"; FAIL+=("$name")
+  echo " skipped"; FAIL+=("$name")
 done
 
 # --- ECC full harness (optional, best-effort) -------------------------------
 if [ "$SKIP_ECC" != 1 ] && have npx; then
-  echo; rainbow "🐴 ECC full harness (agents+commands+hooks) — best effort..."
+  echo; rainbow "ECC full harness (agents+commands+hooks) — best effort..."
   timeout 150 npx -y ecc-universal@2.2.3 setup >/dev/null 2>&1 \
-    && echo "  ✅ ECC harness installed via ecc-universal" \
-    || echo "  ℹ️  ECC skills bundled ✓; full harness later: npx ecc-universal@2.2.3 setup"
+    && echo "   ECC harness installed via ecc-universal" \
+    || echo "  ℹ  ECC skills bundled ; full harness later: npx ecc-universal@2.2.3 setup"
 fi
 
 # --- distribute to every AI / IDE ------------------------------------------
@@ -178,18 +178,18 @@ AGENTS=(
   "$PWD/.cursor/skills|Cursor(project)"
 )
 if [ "$ALL_AGENTS" -eq 1 ]; then
-  echo; rainbow "🐴 distributing to every AI + IDE..."
+  echo; rainbow "distributing to every AI + IDE..."
   for a in "${AGENTS[@]}"; do d="${a%%|*}"; n="${a#*|}"
-    mkdir -p "$d" && cp -rf "$DEST"/. "$d"/ && echo "  ✅ $n → $d"
+    mkdir -p "$d" && cp -rf "$DEST"/. "$d"/ && echo "   $n -> $d"
   done
 else
-  echo; echo "ℹ️  add --all-agents to mirror skills into Claude/Codex/Gemini/Cursor/Windsurf/OpenCode/Goose"
+  echo; echo "ℹ  add --all-agents to mirror skills into Claude/Codex/Gemini/Cursor/Windsurf/OpenCode/Goose"
 fi
 
 echo
 echo "════════════════════════════════════════"
-[ -n "$BUNDLE" ] && echo "🐴 offline bundle detected — zero network needed"
-echo "🦄 PRIME SKILLS: $OK/${#MANIFEST[@]} installed → $DEST"
-[ "${#FAIL[@]}" -gt 0 ] && echo "   ⚠️  retry later: ${FAIL[*]}"
-echo "🐴 ponytail secured. go build something."
+[ -n "$BUNDLE" ] && echo "offline bundle detected — zero network needed"
+echo "PRIME SKILLS: $OK/${#MANIFEST[@]} installed -> $DEST"
+[ "${#FAIL[@]}" -gt 0 ] && echo "     retry later: ${FAIL[*]}"
+echo "ponytail secured. go build something."
 echo "════════════════════════════════════════"

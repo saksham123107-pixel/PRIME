@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════════════
-#  🦄 PRIME SKILLS for WINDOWS — ONE COMMAND. EVERY SKILL. EVERY AI. EVERY IDE.
+#  PRIME SKILLS for WINDOWS — ONE COMMAND. EVERY SKILL. EVERY AI. EVERY IDE.
 #  Usage:
 #    powershell -ExecutionPolicy Bypass -File prime-skills.ps1
 #    powershell -ExecutionPolicy Bypass -File prime-skills.ps1 -AllAgents

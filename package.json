@@ -1,12 +1,12 @@
 {
   "name": "prime-skills",
   "version": "1.0.0",
-  "description": "🦄 PRIME SKILLS — one command installs 99 elite AI coding skills (ECC suite, reverse engineering, CTF, security audit, code review, testing, web dev) into Claude Code, Codex, Cursor, Windsurf, Qoder, Gemini, OpenCode & Goose. Offline-first bundle, zero dependencies, cross-platform. 🐴",
+  "description": "PRIME SKILLS — one command installs 99 elite AI coding skills (ECC suite, reverse engineering, CTF, security audit, code review, testing, web dev) into Claude Code, Codex, Cursor, Windsurf, Qoder, Gemini, OpenCode & Goose. Offline-first bundle, zero dependencies, cross-platform. ",
   "bin": { "prime-skills": "bin/cli.js" },
   "files": ["bin/", "bundle/", "SKILL.md", "prime-skills.sh", "prime-skills.ps1", "prime-skills.bat"],
   "keywords": ["skills", "claude", "cursor", "qoder", "codex", "gemini", "windsurf", "opencode", "goose", "agent", "ai", "reverse-engineering", "ctf", "security-audit", "code-review", "testing", "ecc", "developer-tools", "cli"],
   "license": "MIT",
   "engines": { "node": ">=16.7.0" },
   "repository": { "type": "git", "url": "https://github.com/saksham123107-pixel/PRIME" },
-  "author": "PRIMEx <saksham123107-pixel@users.noreply.github.com>"
+  "author": "saksham123107-pixel <283350486+saksham123107-pixel@users.noreply.github.com>"
 }
